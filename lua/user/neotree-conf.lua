@@ -64,13 +64,8 @@ local config = {
 		show_separator_on_edge = false,
 		--                       true  : |/    a    \/    b    \/    c    \|
 		--                       false : |     a    \/    b    \/    c     |
-		-- highlight_tab = "NeoTreeTabInactive",
-		-- highlight_tab_active = "NeoTreeTabActive",
-		-- highlight_background = "NeoTreeTabInactive",
-		-- highlight_separator = "NeoTreeTabSeparatorInactive",
-		-- highlight_separator_active = "NeoTreeTabSeparatorActive",
 	},
-	--
+
 	default_component_configs = {
 		container = {
 			enable_character_fade = true,
@@ -230,7 +225,7 @@ local config = {
 			--"*/src/*/tsconfig.json",
 		},
 		always_show = { -- remains visible even if other settings would normally hide it
-			--".gitignored",
+			".gitignored",
 		},
 		never_show = { -- remains hidden even if visible is toggled to true, this overrides always_show
 			"node_modules",
@@ -248,8 +243,6 @@ local config = {
 			},
 		},
 		async_directory_scan = "auto", -- "auto"   means refreshes are async, but it's synchronous when called from the Neotree commands.
-		-- "always" means directory scans are always async.
-		-- "never"  means directory scans are never async.
 		bind_to_cwd = true, -- true creates a 2-way binding between vim's cwd and neo-tree's root
 		cwd_target = {
 			sidebar = "tab", -- sidebar is when position = left or right

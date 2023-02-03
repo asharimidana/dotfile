@@ -6,17 +6,17 @@ local lualine = require('lualine')
 -- Color table for highlights
 -- stylua: ignore
 local colors = {
-  bg       = '#202328',
+  bg       = '#ad6800',
   fg       = '#bbc2cf',
   yellow   = '#ECBE7B',
   cyan     = '#008080',
   darkblue = '#081633',
-  green    = '#98be65',
-  orange   = '#FF8800',
+  green    = '#00ff1a',
+  orange   = '#ffffff',
   violet   = '#a9a1e1',
-  magenta  = '#c678dd',
-  blue     = '#51afef',
-  red      = '#ec5f67',
+  magenta  = '#ffffff',
+  blue     = '#2500ff',
+  red      = '#ff0000',
 }
 
 local conditions = {
@@ -89,13 +89,13 @@ ins_left {
 ins_left {
   -- mode component
   function()
-    return ''
+    return 'ASHARI'
   end,
   color = function()
     -- auto change color according to neovims mode
     local mode_color = {
-      n = colors.red,
-      i = colors.green,
+      n = colors.green,
+      i = colors.red,
       v = colors.blue,
       [''] = colors.blue,
       V = colors.blue,

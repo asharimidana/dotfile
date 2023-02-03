@@ -1,4 +1,17 @@
 local map = require("utils").map
+require("gruvbox").setup({
+	contrast = "hard", -- can be "hard", "soft" or empty string
+	inverse = false, -- invert background for search, diffs, statuslines and errors
+	undercurl = true,
+	underline = true,
+	bold = true,
+	italic = true,
+	strikethrough = true,
+	invert_selection = false,
+	invert_signs = false,
+	invert_tabline = false,
+	invert_intend_guides = false
+})
 
 require("user.plugins")
 require("cmpx")
@@ -23,6 +36,9 @@ require('nvim_comment').setup()
 vim.cmd 'colorscheme gruvbox'
 -- vim.cmd 'colorscheme tokyonight-storm'
 
+vim.cmd 'set nohlsearch'
+-- vim.cmd 'set termguicolors'
+
 vim.cmd 'set backup'
 vim.cmd 'set backupdir=~/public_html'
 vim.cmd 'set dir=~/public_html'
@@ -34,13 +50,13 @@ vim.cmd 'set ignorecase'
 vim.cmd 'set scrolloff=11' --untuk batas scrool
 vim.cmd 'set smartindent'
 vim.cmd 'set cindent'
+
 -- vim.cmd 'set clipboard=unnamedplus'
 vim.cmd 'set clipboard=unnamed'
 
 vim.cmd 'set noswapfile'
 vim.cmd 'set tabstop=4'
 vim.cmd ':set shiftwidth=4' -- ukuran 1 tab 2 spasi
-
 
 vim.cmd 'set wrap'
 vim.cmd "set breakindent"
@@ -57,7 +73,6 @@ map("n", "<C-s>", ":w<CR>")
 
 map("n", "<Space>bb",
 	":lua require'telescope.builtin'.buffers(require('telescope.themes').get_dropdown({ sort_lastused = true, ignore_current_buffer = true }) )<cr>")
--- ":lua require'telescope.builtin'.buffers(require('telescope.themes').get_dropdown({ sort_lastused = true, ignore_current_buffer = true }) )<cr>")
 map("n", "<Space>s", ":lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({  }) )<CR>")
 map("n", "<Space>t", ":Telescope live_grep<CR>")
 map("n", "<Space>q", ":Telescope diagnostics<CR>")
@@ -87,15 +102,37 @@ require('neoscroll').setup({
 })
 
 local t    = {}
--- Syntax: t[keys] = {function, {function arguments}}
--- t['<C-u>'] = { 'scroll', { '-vim.wo.scroll', 'true', '100' } }
--- t['<C-d>'] = { 'scroll', { 'vim.wo.scroll', 'true', '100' } }
 t['<C-u>'] = { 'scroll', { '-vim.api.nvim_win_get_height(0)', 'true', '450' } }
 t['<C-d>'] = { 'scroll', { 'vim.api.nvim_win_get_height(0)', 'true', '450' } }
--- t['<C-y>'] = { 'scroll', { '-0.10', 'false', '100' } }
--- t['<C-e>'] = { 'scroll', { '0.10', 'false', '100' } }
--- t['zt']    = { 'zt', { '250' } }
--- t['zz']    = { 'zz', { '250' } }
--- t['zb']    = { 'zb', { '250' } }
 
 require('neoscroll.config').set_mappings(t)
+
+
+
+
+
+require("toggleterm").setup {
+	-- size can be a number or function which is passed the current terminal
+	size = 20,
+	open_mapping = [[<c-\>]],
+	hide_numbers = true, -- hide the number column in toggleterm buffers
+	shade_filetypes = {},
+	autochdir = false, -- when neovim changes it current directory the terminal will change it's own when next it's opened
+
+	shade_terminals = true, -- NOTE: this option takes priority over highlights specified so if you specify Normal highlights you should set this to false
+	shading_factor = 2, -- the percentage by which to lighten terminal background, default: -30 (gets multiplied by -3 if background is light)
+	start_in_insert = true,
+	insert_mappings = true, -- whether or not the open mapping applies in insert mode
+	terminal_mappings = true, -- whether or not the open mapping applies in the opened terminals
+	persist_size = true,
+	persist_mode = true, -- if set to true (default) the previous terminal mode will be remembered
+	direction = 'float',
+	close_on_exit = true, -- close the terminal window when the process exits
+	shell = vim.o.shell, -- change the default shell
+	auto_scroll = true, -- automatically scroll to the bottom on terminal output
+	-- This field is only relevant if direction is set to 'float'
+	float_opts = {
+		border = 'curved',
+		winblend = 0,
+	},
+}

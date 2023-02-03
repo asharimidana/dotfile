@@ -146,10 +146,10 @@ _G.packer_plugins = {
     path = "/home/ashari/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
-  gruvbox = {
+  ["gruvbox.nvim"] = {
     loaded = true,
-    path = "/home/ashari/.local/share/nvim/site/pack/packer/start/gruvbox",
-    url = "https://github.com/morhetz/gruvbox"
+    path = "/home/ashari/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
+    url = "https://github.com/ellisonleao/gruvbox.nvim"
   },
   ["indent-blankline.nvim"] = {
     loaded = true,
@@ -227,6 +227,11 @@ _G.packer_plugins = {
     path = "/home/ashari/.local/share/nvim/site/pack/packer/start/nvim-comment",
     url = "https://github.com/terrortylor/nvim-comment"
   },
+  ["nvim-highlight-colors"] = {
+    loaded = true,
+    path = "/home/ashari/.local/share/nvim/site/pack/packer/start/nvim-highlight-colors",
+    url = "https://github.com/brenoprata10/nvim-highlight-colors"
+  },
   ["nvim-lint"] = {
     loaded = true,
     path = "/home/ashari/.local/share/nvim/site/pack/packer/start/nvim-lint",
@@ -277,6 +282,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/ashari/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
     url = "https://github.com/folke/tokyonight.nvim"
+  },
+  ["vCoolor.vim"] = {
+    loaded = true,
+    path = "/home/ashari/.local/share/nvim/site/pack/packer/start/vCoolor.vim",
+    url = "https://github.com/KabbAmine/vCoolor.vim"
   },
   ["vim-dispatch"] = {
     commands = { "Dispatch", "Make", "Focus", "Start" },
