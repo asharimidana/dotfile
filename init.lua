@@ -18,7 +18,7 @@ require("cmpx")
 require("null_ls")
 
 require("user.lualine")
-require("user.chocoline")
+-- require("user.bufferline")
 require('neoscroll').setup()
 require("user.indent-blank")
 require("user.autopairs")
@@ -63,7 +63,7 @@ vim.cmd "set breakindent"
 vim.cmd "set breakindentopt=shift:4" -- ukuran 1 tab 2 spasi
 vim.cmd "set showbreak=>>" --
 
-map("n", "<Space>e", ":NeoTreeFocusToggle<CR>")
+map("n", "<Space>e", ":NeoTreeShowToggle<CR>")
 map("n", "<Space>c", ":bd | blast<CR>")
 map("n", "<Leader>a", ":cclose<CR>")
 
